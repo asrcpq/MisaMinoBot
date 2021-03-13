@@ -597,7 +597,7 @@ namespace AI {
                     }
                 }
             }
-            //if (USING_MOV_D)
+            if (USING_MOV_D)
             if ( m.movs.back() != Moving::MOV_DD )
             {
                 int nx = m.x, ny = m.y, ns = m.spin;
