@@ -302,26 +302,49 @@ void Bot::processMoves() {
     while ( tetris.ai_movs_flag == -1 && !tetris.ai_movs.movs.empty() ){
         int mov = tetris.ai_movs.movs[0];
         tetris.ai_movs.movs.erase( tetris.ai_movs.movs.begin() );
-		std::cout << mov << " ";
         if (0) ;
-        else if (mov == AI::Moving::MOV_L) tetris.tryXMove(-1);
-        else if (mov == AI::Moving::MOV_R) tetris.tryXMove( 1);
-        else if (mov == AI::Moving::MOV_D) tetris.tryYMove( 1);
-        else if (mov == AI::Moving::MOV_LSPIN) tetris.trySpin(1);
-        else if (mov == AI::Moving::MOV_RSPIN) tetris.trySpin(3);
-        else if (mov == AI::Moving::MOV_LL) { tetris.tryXXMove(-1); } //{ tetris.mov_llrr = AI::Moving::MOV_LL; }
-        else if (mov == AI::Moving::MOV_RR) { tetris.tryXXMove( 1); } //{ tetris.mov_llrr = AI::Moving::MOV_RR; }
-        else if (mov == AI::Moving::MOV_DD) tetris.tryYYMove( 1) ;
-        else if (mov == AI::Moving::MOV_DROP) tetris.drop();
-        else if (mov == AI::Moving::MOV_HOLD) {
+        else if (mov == AI::Moving::MOV_L) {
+			tetris.tryXMove(-1);
+			std::cout << 'h';
+        } else if (mov == AI::Moving::MOV_R) {
+			tetris.tryXMove( 1);
+			std::cout << 'l';
+        } else if (mov == AI::Moving::MOV_D) {
+			tetris.tryYMove( 1);
+			std::cout << 'J';
+        } else if (mov == AI::Moving::MOV_LSPIN) {
+			tetris.trySpin(1);
+			std::cout << 'z';
+        } else if (mov == AI::Moving::MOV_RSPIN) {
+			tetris.trySpin(3);
+			std::cout << 'x';
+        } else if (mov == AI::Moving::MOV_LL) {
+			tetris.tryXXMove(-1);
+			std::cout << 'H';
+		} //{ tetris.mov_llrr = AI::Moving::MOV_LL; }
+        else if (mov == AI::Moving::MOV_RR) {
+			tetris.tryXXMove( 1);
+			std::cout << 'L';
+		} //{ tetris.mov_llrr = AI::Moving::MOV_RR; }
+        else if (mov == AI::Moving::MOV_DD) {
+			tetris.tryYYMove( 1) ;
+			std::cout << 'j';
+        } else if (mov == AI::Moving::MOV_DROP) {
+			std::cout << 'k';
+			tetris.drop();
+        } else if (mov == AI::Moving::MOV_HOLD) {
             tetris.tryHold();
+			std::cout << 's';
         } else if (mov == AI::Moving::MOV_SPIN2) {
             if ( AI::spin180Enable() ) {
                 tetris.trySpin180();
             }
+			std::cout << 'd';
         } else if (mov == AI::Moving::MOV_REFRESH) {
             tetris.env_change = 1;
+			std::cout << 'r';
         }
+		std::cout << " ";
     }
 	std::cout << std::endl;
     tetris.clearLines();
