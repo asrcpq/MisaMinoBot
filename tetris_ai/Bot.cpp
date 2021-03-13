@@ -302,6 +302,7 @@ void Bot::processMoves() {
     while ( tetris.ai_movs_flag == -1 && !tetris.ai_movs.movs.empty() ){
         int mov = tetris.ai_movs.movs[0];
         tetris.ai_movs.movs.erase( tetris.ai_movs.movs.begin() );
+		std::cout << mov << " ";
         if (0) ;
         else if (mov == AI::Moving::MOV_L) tetris.tryXMove(-1);
         else if (mov == AI::Moving::MOV_R) tetris.tryXMove( 1);
@@ -322,6 +323,7 @@ void Bot::processMoves() {
             tetris.env_change = 1;
         }
     }
+	std::cout << std::endl;
     tetris.clearLines();
 }
 
@@ -370,6 +372,6 @@ void Bot::outputAction() {
         out<<"3,3,3,3,3,3,3,3,3,3";
         if(i!=bottom-1)out<<';';
     }
-    std::cout<<out.str()<<std::endl;    
+    // std::cout<<out.str()<<std::endl;    
 
 }
