@@ -22,7 +22,7 @@ public:
         int level;
         tetris_ai() {
             style = 2;
-            level = 4;
+            level = 10;
         }
     };
 
