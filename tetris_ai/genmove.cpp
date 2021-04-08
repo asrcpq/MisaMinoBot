@@ -25,7 +25,7 @@
 namespace AI {
     bool g_spin180 = false;
     std::vector<int> g_combo_attack;
-    bool g_allSpin = false;
+    bool g_allSpin = true;
     bool g_softdrop = true;
     //bool g_softdrop = false;
 
