@@ -28,7 +28,7 @@ namespace AI {
     const int gem_add_y = 6;
 #endif
     const int gem_beg_x = 3;
-    const int gem_beg_y = 1;
+    const int gem_beg_y = -3;
 
     struct GameField {
         signed char m_w, m_h;
